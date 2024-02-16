@@ -727,7 +727,8 @@ CL_API_ENTRY cl_int CL_API_CALL cl::GetDeviceInfo(
                        device->work_group_collective_functions_support);
       DEVICE_INFO_CASE(CL_DEVICE_GENERIC_ADDRESS_SPACE_SUPPORT,
                        device->generic_address_space_support);
-    case CL_DEVICE_NUMERIC_VERSION: {
+    case CL_DEVICE_NUMERIC_VERSION: 
+    case CL_DEVICE_IP_VERSION_INTEL: {
       OCL_CHECK(param_value && (param_value_size < sizeof(cl_version)),
                 return CL_INVALID_VALUE);
       if (param_value) {
